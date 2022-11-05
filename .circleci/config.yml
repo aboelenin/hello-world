@@ -22,7 +22,7 @@ jobs:
           command: echo ${CIRCLE_BRANCH}
       - run:
           name: "What was my custom environment variable?"
-          command: echo ${my_name}
+          command: echo ${MY_NAME}
   print_hello:
     docker:
       - image: circleci/node:13.8.0
