@@ -38,7 +38,7 @@ jobs:
       - checkout
       - run:
           name: "print world"
-          command:  echo ${My_NAME}
+          command:  echo ${MY_NAME}
             #  "echo world"
             
 
