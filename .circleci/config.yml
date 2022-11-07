@@ -49,7 +49,7 @@ jobs:
       - image: circleci/node:13.8.0
     steps:
     - attach_workspace:
-        at: /tmp/
+        at: /tmp/foo/bar
     # - run:
     #       name: "print Hello"
     #       command:  "echo hello"
