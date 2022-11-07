@@ -50,7 +50,7 @@ jobs:
     steps:
     - checkout
     - attach_workspace:
-        at: /tmp/output.txt
+        at: /tmp/
     - run: cat /tmp/output.txt
 
     # - run:
