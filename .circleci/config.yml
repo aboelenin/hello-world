@@ -31,6 +31,18 @@ jobs:
       - run:
           name: "print Hello"
           command:  "echo hello"
+  save_hello_world_output:
+    docker:
+      - image: circleci/node:13.8.0
+    steps:
+      - run:
+          name: "save text"
+          command:  echo "text to output here" > output.txt
+          - persist_to_workspace:
+              root: /tmp/dir
+              paths:
+                - foo/bar
+                - baz
 
   print_world:
     docker:
