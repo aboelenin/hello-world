@@ -41,14 +41,14 @@ jobs:
       - persist_to_workspace:
           root: /tmp/
           paths:
-            - baz
+            - output.txt
 
   print_output_file:
     docker:
       - image: circleci/node:13.8.0
     steps:
     - attach_workspace:
-        at: /tmp/baz
+        at: /tmp/output.txt
     # - run:
     #       name: "print Hello"
     #       command:  "echo hello"
