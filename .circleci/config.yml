@@ -44,6 +44,16 @@ jobs:
             - foo/bar
             - baz
 
+  print_output_file:
+    docker:
+      - image: circleci/node:13.8.0
+    steps:
+    - attach_workspace:
+        at: /tmp/dir   
+    # - run:
+    #       name: "print Hello"
+    #       command:  "echo hello"
+
   print_world:
     docker:
       - image: circleci/node:13.8.0
