@@ -41,7 +41,6 @@ jobs:
       - persist_to_workspace:
           root: /tmp/
           paths:
-            - foo/bar
             - baz
 
   print_output_file:
@@ -49,7 +48,7 @@ jobs:
       - image: circleci/node:13.8.0
     steps:
     - attach_workspace:
-        at: /tmp/foo/bar
+        at: /tmp/baz
     # - run:
     #       name: "print Hello"
     #       command:  "echo hello"
