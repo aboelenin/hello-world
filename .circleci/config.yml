@@ -26,7 +26,7 @@ jobs:
       - run:
           name: "print Failure"
           command:  "echo Failre"
-          when: failure
+          when: on_fail
 
 
 
