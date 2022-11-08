@@ -34,9 +34,8 @@ jobs:
           name: "What was my custom environment variable?"
           command: echo ${MY_NAME}
 
-      - run:
-          name: "checking Comnmands"
-          command: sayhello Ahmad
+       - command: sayhello:
+               to:  Ahmad
   print_hello:
     docker:
       - image: circleci/node:13.8.0
