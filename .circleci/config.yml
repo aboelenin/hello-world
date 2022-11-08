@@ -4,6 +4,16 @@ version: 2.1
 
 # Define a job to be invoked later in a workflow.
 # See: https://circleci.com/docs/2.0/configuration-reference/#jobs
+commands:
+  sayhello:
+    description: "A very simple command for demonstration purposes"
+    parameters:
+      to:
+        type: string
+        default: "Hello World"
+    steps:
+      - run: echo << parameters.to >>
+
 jobs:
   say-hello:
     # Specify the execution environment. You can specify an image from Dockerhub or use one of our Convenience Images from CircleCI's Developer Hub.
@@ -23,6 +33,10 @@ jobs:
       - run:
           name: "What was my custom environment variable?"
           command: echo ${MY_NAME}
+
+      - run:
+          name: "checking Comnmands"
+          command: sayhello Ahmad
   print_hello:
     docker:
       - image: circleci/node:13.8.0
@@ -52,10 +66,7 @@ jobs:
     - attach_workspace:
         at: /tmp/
     - run: cat /tmp/output.txt
-
-    # - run:
-    #       name: "print Hello"
-    #       command:  "echo hello"
+	
 
   print_world:
     docker:
@@ -67,6 +78,8 @@ jobs:
           command:  echo ${MY_NAME}
             #  "echo world"
             
+
+
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
