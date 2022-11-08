@@ -34,8 +34,7 @@ jobs:
           name: "What was my custom environment variable?"
           command: echo ${MY_NAME}
 
-      - command:
-        - sayhello:
+      - sayhello:
               to: "Ahmad"
   print_hello:
     docker:
