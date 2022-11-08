@@ -36,7 +36,7 @@ jobs:
 
       - command:
         - sayhello:
-               to:  "Ahmad"
+              to: "Ahmad"
   print_hello:
     docker:
       - image: circleci/node:13.8.0
